@@ -1,0 +1,52 @@
+* Layout for a small keyboard
+/Tentative title: M30C10 (mechanical:30, capacitive:10)/
+
+Describes a minimal keyboard with 30 mechanical keyswitches (Cherry MX Clear),
+plus a row of capacitive buttons for use by both thumbs.
+
+Change the function of the mechanical keys by holding down 0 or 1 modifier to activate a particular "layer":
+
+| none | Shift   | L0      | L1     |
+|------+---------+---------+--------|
+| Main | Shfited | Numeric | Symbol |
+
+* Main Layer
+Primary layer for alphabet and some punctuation.
+
+  q w e r t   y u i o p
+  a s d f g   h j k l '
+  z x c v b   n m , . ?
+          
+* Shifted
+Uppercase and shifted punctuation from lower layer.
+
+  Q W E R T   Y U I O P
+  A S D F G   H J K L "
+  Z X C V B   N M _ : !
+
+* Numeric
+Hold the number layer key for a numpad.
+- Top layer: programmer Dvorak
+- Middle: qwerty
+- Bottom contains some handy symbols used when number crunching.
+
+  8 6 4 2 0   1 3 5 7 9
+  1 2 3 4 5   6 7 8 9 0
+  ( ) : , %   . + - * /
+
+* Symbol
+Programming language oriented layer.
+
+  ~ ` ! @ #   $ % ^ & *
+  ) ( _ - +   = . , / ?
+  ] [ ; : {   } " ' < >
+
+* Thumb Keys
+These include all the modifiers (Shift, L*) as well as space, tab, enter, and backspace.
+
+| Column 0 | Column 1 | Column 2  | (empty) | Column 3 | Column 4 | Column 5 |
+|----------+----------+-----------+---------+----------+----------+----------|
+| Shift_L  | Tab      | Backspace |         | Space    | Enter    | Shift_R  |
+| Ctrl_L   | Meta     | Alt       |         | AltGr    | Esc      | Ctrl_R   |
+|          | Layer 0  | Layer 1   |         | Layer 2  | Layer 3  |          |
+
