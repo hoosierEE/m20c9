@@ -44,9 +44,9 @@ Programming language oriented layer.
 * Thumb Keys
 These include all the modifiers (Shift, L*) as well as space, tab, enter, and backspace.
 
-| Column 0 | Column 1 | Column 2  | (empty) | Column 3 | Column 4 | Column 5 |
-|----------+----------+-----------+---------+----------+----------+----------|
-| Shift_L  | Tab      | Backspace |         | Space    | Enter    | Shift_R  |
-| Ctrl_L   | Meta     | Alt       |         | AltGr    | Esc      | Ctrl_R   |
-|          | Layer 0  | Layer 1   |         | Layer 2  | Layer 3  |          |
+| Column 0 | Column 1 | Column 2  |   | Column 3 | Column 4 | Column 5 |
+|----------+----------+-----------+---+----------+----------+----------|
+| Shift_L  | Tab      | Backspace |   | Space    | Enter    | Shift_R  |
+| Ctrl_L   | Meta     | Alt       |   | AltGr    | Esc      | Ctrl_R   |
+|          | Layer 3  | Layer 2   |   | Layer 1  | Layer 0  |          |
 
