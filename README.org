@@ -37,9 +37,9 @@ Hold the number layer key for a numpad.
 * Symbol
 Programming language oriented layer.
 
-|~|`|!|@|#|$|%|^|&|*|
-|)|(|_|-|+|=|.|,|/|?|
-|]|[|;|:|{|}|"|'|<|>|
+|~|`|!|@|#||$|%|^|&|*|
+|)|(|_|-|+||=|.|,|/|||
+|]|[|;|:|{||}|"|'|<|>|
 
 * Thumb Keys
 These include all the modifiers (Shift, L*) as well as space, tab, enter, and backspace.
