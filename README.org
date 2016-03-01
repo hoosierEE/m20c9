@@ -1,5 +1,5 @@
 * Layout for a small keyboard
-/Tentative title: M30C10 (mechanical:30, capacitive:10)/
+Codename: M30C10 (mechanical:30, capacitive:10)
 
 Describes a minimal keyboard with 30 mechanical keyswitches (Cherry MX Clear),
 plus a row of capacitive buttons for use by both thumbs.
