@@ -13,10 +13,10 @@ Change the function of the mechanical keys by holding down 0 or 1 modifier to ac
 * Main Layer
 Primary layer for alphabet and some punctuation.
 
-  q w e r t   y u i o p
-  a s d f g   h j k l '
-  z x c v b   n m , . ?
-          
+ | q | w | e | r | t | y | u | i | o | p |
+ | a | s | d | f | g | h | j | k | l | ' |
+ | z | x | c | v | b | n | m | , | . | ? |
+                     
 * Shifted
 Uppercase and shifted punctuation from lower layer.
 
