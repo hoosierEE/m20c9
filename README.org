@@ -10,6 +10,8 @@ Change the function of the mechanical keys by holding down 0 or 1 modifier to ac
 |------+---------+---------+--------|
 | Main | Shfited | Numeric | Symbol |
 
+Notably, some characters are repeated on more than one layer.  For example, period and comma are used in prose as well as programming, so they appear on both the =Main= and =Symbol= layers.  Other things could appear in multiple layers, but don't.  For example, the single- and double-quote characters only appear on the =Main= and =Shifted= layers, respectively.
+
 * Main Layer
 Primary layer for alphabet and some punctuation.
 
@@ -37,8 +39,8 @@ Hold the number layer key for a numpad.
 * Symbol
 Programming language oriented layer.
 
-| @   | # | $ | % | [ |   | ] | ^ | & | * | \     |
-| TAB | - | + | = | ( |   | ) | ; | : | / | \vert |
+| @   | # | $ | % | [ |   | ] | ^ | & | * | \vert |
+| TAB | - | + | = | ( |   | ) | ; | : | / | \     |
 | _   | ~ | ` | ! | { |   | } | , | . | < | >     |
  
 * Thumb Keys
