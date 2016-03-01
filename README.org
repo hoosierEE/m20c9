@@ -20,31 +20,33 @@ Primary layer for alphabet and some punctuation.
 | z | x | c | v | b |   | n | m | , | . | ? |
                      
 * Shifted
-Uppercase and shifted punctuation from lower layer.
+Uppercase and shifted punctuation from lower layer.  Note underbar instead of semicolon.
 
 | Q | W | E | R | T |   | Y | U | I | O | P |
 | A | S | D | F | G |   | H | J | K | L | " |
 | Z | X | C | V | B |   | N | M | _ | : | ! |
 
 * Numeric
-Hold the number layer key for a numpad.
 - Top layer: programmer Dvorak
 - Middle: qwerty
 - Bottom contains some handy symbols used when number crunching.
+Note: It was a toss-up to use parentheses rather than square brackets.  Depending on the context one is better than the other.  Might replace the top row with more punctuation, or the middle row, depending on which number layout works better.
 
 | 7 | 5 | 3 | 1 | 9 |   | 0 | 2 | 4 | 6 | 8 |
 | 1 | 2 | 3 | 4 | 5 |   | 6 | 7 | 8 | 9 | 0 |
 | ( | ) | : | , | % |   | . | + | - | * | / |
 
 * Symbol
-Programming language oriented layer.
+Programming language/swearing layer.
 
 | @   | # | $ | % | [ |   | ] | ^ | & | * | \vert |
 | TAB | - | + | = | ( |   | ) | ; | : | / | \     |
 | _   | ~ | ` | ! | { |   | } | , | . | < | >     |
  
 * Thumb Keys
-These include all the modifiers (Shift, L*) as well as space, tab, enter, and backspace.
+These include all the modifiers (Shift, L*) as well as space, tab, enter, and backspace.  Two things of note here.
+1. =Layer 3= and =Layer 2= are currently empty
+2. The layer buttons are numbered 3,2,1,0 because it seemed more likely to use layer 0 and 1 with other modifiers.
 
 | Column 0 | Column 1 | Column 2  |   | Column 3 | Column 4 | Column 5 |
 |----------+----------+-----------+---+----------+----------+----------|
