@@ -22,6 +22,7 @@ Modifiers inherit from the =Main= layer, overriding individual keys as desired.
 | Z | X | C | V | B |   | N | M | ? | ! | : |
 
 * Numeric
+/Might replace top or middle row with navigation arrows.../
 
 | 7 | 5 | 3 | 1 | 9 |   | 0 | 2 | 4 | 6 | 8 |
 | 1 | 2 | 3 | 4 | 5 |   | 6 | 7 | 8 | 9 | 0 |
@@ -30,15 +31,14 @@ Modifiers inherit from the =Main= layer, overriding individual keys as desired.
 * Symbol
 
 | @   | # | $ | % | [ |   | ] | ^ | & | * | \vert |
-| TAB | - | + | = | ( |   | ) | ; | : | / | \     |
+| DEL | - | + | = | ( |   | ) | ; | : | / | \     |
 | _   | ~ | ` | ! | { |   | } | < | , | . | >     |
  
 * Thumb Keys
-These include all the modifiers (Shift, L*) as well as space, tab, enter, and backspace.  Three things of note here:
+These include all the modifiers (Shift, L*) as well as space, tab, enter, and backspace.  Two notes:
 
 1. =Layer 4= and =Layer 3= are currently empty, so their keymaps are the same as =Main=.
 2. The layer buttons are arranged 4-3-2-1 because =Meta= and =Alt= are on the left, so =Layer 2= and =Layer 1= are on the opposite side since their symbols might be more commonly used in conjunction with modifiers.
-3. =Alt= plus =Backspace= makes =Del= (a.k.a. =forward-delete=).  This is the only thumb chord, but placing them close together should make it not awkward.
 
 | Shift_L | Tab     | Backspace |   | Space   | Enter   | Shift_R |
 | Ctrl_L  | Meta    | Alt       |   | AltGr   | Esc     | Ctrl_R  |
