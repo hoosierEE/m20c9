@@ -13,7 +13,7 @@ Modifiers inherit from the =Main= layer, overriding individual keys as desired.
 
 | q | w | e | r | t |   | y | u | i | o | p |
 | a | s | d | f | g |   | h | j | k | l | ' |
-| z | x | c | v | b |   | n | m | , | . | / |
+| z | x | c | v | b |   | n | m | , | . | - |
 
 * Shifted
 
@@ -31,7 +31,7 @@ Modifiers inherit from the =Main= layer, overriding individual keys as desired.
 
 | @   | # | $ | % | [ |   | ] | ^ | & | * | \vert |
 | TAB | - | + | = | ( |   | ) | ; | : | / | \     |
-| _   | ~ | ` | ! | { |   | } | , | . | < | >     |
+| _   | ~ | ` | ! | { |   | } | < | , | . | >     |
  
 * Thumb Keys
 These include all the modifiers (Shift, L*) as well as space, tab, enter, and backspace.  Three things of note here:
