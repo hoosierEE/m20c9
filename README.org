@@ -42,5 +42,5 @@ These include all the modifiers (Shift, L*) as well as space, tab, enter, and ba
 
 | Shift_L | Tab     | Backspace |   | Space   | Enter   | Shift_R |
 | Ctrl_L  | Meta    | Alt       |   | AltGr   | Esc     | Ctrl_R  |
-|         | Layer 4 | Layer 3   |   | Layer 2 | Layer 1 |         |
+|         | Layer 4 | Layer 3   |   | Numeric | Symbol  |         |
 
