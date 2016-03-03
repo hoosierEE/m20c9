@@ -1,43 +1,51 @@
+/**
+   CapSwitch.hpp --- touch-sensitive button
+
+   Capacitance increases with 1/distance, so quick increases
+   are converted into "button press" events, and quick decreases
+   become "button release" events.
+*/
+
 #ifndef CAPSWITCH_H
 #define CAPSWITCH_H
 
 class CapSwitch {
 public:
-CapSwitch(uint8_t _pin) : pin(_pin),THRESH(200) {}
+    CapSwitch(uint8_t _pin) : pin(_pin),THRESH(200) {}
     ~CapSwitch() {}
 
     void update(void)
-    {
-        int val = touchRead(pin);
-        static int idx{0};
-        buf[++idx%BUF_LEN] = val;
-        if (accept) {
-            accept = false;
-            double avg = get_avg();
-            cs = avg-val>THRESH||val-avg<=THRESH;
-            fall = ps && !cs;
-            rise = cs && !ps;
+        {
+            int val = touchRead(pin);
+            static int idx{0};
+            buf[++idx%BUF_LEN] = val;
+            if (accept) {
+                accept = false;
+                double avg = get_avg();
+                cs = avg-val>THRESH||val-avg<=THRESH;
+                fall = ps && !cs;
+                rise = cs && !ps;
+            }
         }
-    }
 
     bool pressed(void) {return reset_edge(fall);}
     bool released(void) {return reset_edge(rise);}
 
 private:
     bool reset_edge(bool &edge)
-    {
-        bool t = edge;
-        edge = false;
-        accept = true;
-        return t;
-    }
+        {
+            bool t = edge;
+            edge = false;
+            accept = true;
+            return t;
+        }
 
     double get_avg(void)
-    {
-        double sum{0};
-        for (uint8_t i=0;i<BUF_LEN;++i) {sum+=buf[i];}
-        return sum/BUF_LEN;
-    }
+        {
+            double sum{0};
+            for (uint8_t i=0;i<BUF_LEN;++i) {sum+=buf[i];}
+            return sum/BUF_LEN;
+        }
 
     uint8_t pin;
     const int THRESH;

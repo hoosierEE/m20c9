@@ -31,7 +31,7 @@ Modifiers inherit from the =Main= layer, overriding individual keys as desired.
 * Symbol
 
 | @   | # | $ | % | [ |   | ] | ^ | & | * | \vert |
-| DEL | - | + | = | ( |   | ) | ; | : | / | \     |
+| SPC | - | + | = | ( |   | ) | ; | : | / | \     |
 | _   | ~ | ` | ! | { |   | } | < | , | . | >     |
  
 * Thumb Keys
