@@ -3,8 +3,8 @@
    https://github.com/hoosierEE/m30c10
 */
 #include <Arduino.h>
-#include <Cherry.h>
-#include <CapSwitch.h>
+#include <Cherry.hpp>
+#include <CapSwitch.hpp>
 
 const uint32_t MS_OUT{10};  // output timer (milliseconds)
 elapsedMillis t;
