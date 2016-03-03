@@ -13,10 +13,10 @@ const int TEENSY_COL_PIN[COLS]{2,5,6,7,8}; // pin 9 is also available if more sw
 struct Grid { bool keys[COLS][ROWS]; } raw_grid;
 
 //// Key Layers
-char *default_layer[]{"qwert","yuiop","asdfg","hjkl'","zxcvb","nm,.-"};
+char *default_layer[]{"qwert","yuiop","asdfg","hjkl'" ,"zxcvb","nm,.-"};
 char *shifted_layer[]{"QWERT","YUIOP","ASDFG","HJKL\"","ZXCVB","NM?!:"};
-char *numeric_layer[]{"75319","02468","12345","67890","():,%",".+-*/"};
-char *symbol_layer[]{"@#$%[","]^&*|"," -+=(",");:/\\","_~`!{","}<,.>"};
+char *numeric_layer[]{"75319","02468","12345","67890" ,"():,%",".+-*/"};
+char *symbol_layer []{"@#$%[","]^&*|"," -+=(",");:/\\","_~`!{","}<,.>"};
 
 //// Functions
 void set_pins(void)
