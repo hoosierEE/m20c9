@@ -2,7 +2,7 @@
    m30c10 keyboard firmware for TeensyLC
    https://github.com/hoosierEE/m30c10
 */
-#include <Arduino.h>
+// #include <Arduino.h>
 const uint32_t MS_OUT{10}; elapsedMillis t; // min. output period
 
 //// Model
@@ -45,7 +45,8 @@ Grid scan(void)
 void print_grid(Grid g)
 {
     // for debugging
-    for (int i=0;i<COLS;++i) {
+    for (int i=0// ;
+         i<COLS;++i) {
         for (int j=0;j<ROWS;++j) {
             if (g.keys[i][j]) { Serial.print(default_layer[i][j]); }
         }
@@ -59,8 +60,8 @@ void setup() {
 void loop() {
     print_grid(scan()); // read inputs
 
-    if (t >= MS_OUT) {
-        t -= MS_OUT;
+    if(t>=MS_OUT){
+        t-=MS_OUT;
         // TODO: output if changed
     }
 }
