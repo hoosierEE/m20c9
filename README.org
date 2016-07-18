@@ -1,44 +1,42 @@
 * Layout for a small keyboard
-/work in progress/
+Minimal keyboard with 30 mechanical keyswitches (Cherry MX Clear), plus a cluster of capacitive buttons for use by both thumbs.
 
-Minimal keyboard with 30 mechanical keyswitches (Cherry MX Clear), plus a row of capacitive buttons for use by both thumbs.
+Modifiers inherit from the =Default= layer, overriding individual keys as needed.
 
-Modifiers inherit from the =Main= layer, overriding individual keys as desired.
+| Held-down modifier: | none    | Shift   | Layer1  | Layer2 | Layer3  | Layer4  |
+|---------------------+---------+---------+---------+--------+---------+---------|
+| Layer Used:         | Default | Shifted | Numeric | Symbol | Default | Default |
 
-| Held-down modifier: | none | Shift   | Layer1  | Layer2 | Layer3 | Layer4 |
-|---------------------+------+---------+---------+--------+--------+--------|
-| Layer Used:         | Main | Shfited | Numeric | Symbol | Main   | Main   |
+* Mechanical Key Layers
+Exactly one of these is active at any given time.
 
-* Main Layer
+** Default 
 
 | q | w | e | r | t |   | y | u | i | o | p |
 | a | s | d | f | g |   | h | j | k | l | ' |
 | z | x | c | v | b |   | n | m | , | . | - |
 
-* Shifted
+** Shifted
 
 | Q | W | E | R | T |   | Y | U | I | O | P |
 | A | S | D | F | G |   | H | J | K | L | " |
 | Z | X | C | V | B |   | N | M | ? | ! | : |
 
-* Numeric
+** Numeric
 /Might replace top or middle row with navigation arrows.../
 
 | 7 | 5 | 3 | 1 | 9 |   | 0 | 2 | 4 | 6 | 8 |
 | 1 | 2 | 3 | 4 | 5 |   | 6 | 7 | 8 | 9 | 0 |
-| ( | ) | : | , | % |   | . | + | - | * | / |
+| % | / | : | - | ( |   | ) | + | , | . | * |
 
-* Symbol
+** Symbols
 
 | @   | # | $ | % | [ |   | ] | ^ | & | * | \vert |
 | SPC | - | + | = | ( |   | ) | ; | : | / | \     |
 | _   | ~ | ` | ! | { |   | } | < | , | . | >     |
  
 * Thumb Keys
-These include all the modifiers (Shift, L*) as well as space, tab, enter, and backspace.  Two notes:
-
-1. =Layer 4= and =Layer 3= are currently empty, so their keymaps are the same as =Main=.
-2. The layer buttons are arranged 4-3-2-1 because =Meta= and =Alt= are on the left, so =Layer 2= and =Layer 1= are on the opposite side since their symbols might be more commonly used in conjunction with modifiers.
+These include all the modifiers (Shift, L*) as well as space, tab, enter, and backspace.  Note that since no keymap is specified for =Layer 3= and =Layer 4=, they use the =Default= layer.
 
 | Shift_L | Tab     | Backspace |   | Space   | Enter   | Shift_R |
 | Ctrl_L  | Meta    | Alt       |   | AltGr   | Esc     | Ctrl_R  |

@@ -1,65 +1,71 @@
-/**
-   m30c10 keyboard firmware for TeensyLC
+/* m30c10 keyboard firmware for TeensyLC
    https://github.com/hoosierEE/m30c10
 */
-// #include <Arduino.h>
-const uint32_t MS_OUT{10}; elapsedMillis t; // min. output period
+#include <Arduino.h>
+#include <array>
 
-//// Model
-static const uint8_t COLS{5}; // 2 columns for index finger, 1 each for middle/ring/pinkie
-static const uint8_t ROWS{6}; // 3 rows per hand
-const int TEENSY_ROW_PIN[ROWS]{10,11,12,14,20,21};
-const int TEENSY_COL_PIN[COLS]{2,5,6,7,8}; // pin 9 is also available if more switches req'd
-struct Grid { bool keys[COLS][ROWS]; } raw_grid;
+// Output data rate limit: 10ms
+const uint32_t MS_OUT{10};
+elapsedMillis t;
 
-//// Key Layers
-char *default_layer[]{"qwert","yuiop","asdfg","hjkl'","zxcvb","nm,.-"};
-char *shifted_layer[]{"QWERT","YUIOP","ASDFG","HJKL\"","ZXCVB","NM?!:"};
-char *numeric_layer[]{"75319","02468","12345","67890","():,%",".+-*/"};
-char *symbol_layer []{"@#$%[","]^&*|"," -+=(",");:/\\","_~`!{","}<,.>"};
 
-//// Functions
-void set_pins(void)
-{
-    for (int i=0;i<COLS;++i) {
-        pinMode(TEENSY_COL_PIN[i], OUTPUT);
-        for (int j=0;j<ROWS;++j) {
-            pinMode(TEENSY_ROW_PIN[j], INPUT_PULLUP);
+/* Pins */
+static const int COLS{6},ROWS{5},CAPS{9};
+const std::array<int,CAPS>teensy_cap_pin{{0,1,15,16,17,18,19,22,23}};
+const std::array<int,COLS>teensy_row_pin{{10,11,12,14,20,21}};
+const std::array<int,ROWS>teensy_col_pin{{2,5,6,7,8}};
+
+
+/* Model */
+struct Grid{bool keys[COLS][ROWS];}grid;
+const std::array<char,3>greet{"hi"};
+const std::array<std::array<char,3>,2>greets{{"hi","yo"}};
+const std::array<std::array<char,6>,6> default_layer[]{{"qwert","yuiop","asdfg","hjkl'","zxcvb","nm,.-"}},
+    shifted_layer[]{{"QWERT","YUIOP","ASDFG","HJKL\"","ZXCVB","NM?!:"}},
+    numeric_layer[]{{"75319","02468","12345","67890","%/:-(",")+,.*"}},
+    symbols_layer[]{{"@#$%[","]^&*|"," -+=(",");:/\\","_~`!{","}<,.>"}};
+
+
+/* Functions */
+void set_pins(void){
+    for(int i=0;i<COLS;++i){
+        pinMode(teensy_col_pin[i],OUTPUT);
+        for(int j=0;j<ROWS;++j){
+            pinMode(teensy_row_pin[j], INPUT_PULLUP);
         }
     }
 }
 
-Grid scan(void)
-{
+Grid scan(void){
     Grid g;
-    for (int i=0;i<COLS;++i) {
-        digitalWrite(TEENSY_COL_PIN[i],LOW); // pull column low
-        for (int j=0;j<ROWS;++j) {
-            g.keys[i][j] = digitalRead(TEENSY_ROW_PIN[i]); // populate grid
+    for(int i=0;i<COLS;++i){
+        digitalWrite(teensy_col_pin[i],LOW);// pull column low
+        for(int j=0;j<ROWS;++j){
+            g.keys[i][j]=digitalRead(teensy_row_pin[i]);// populate grid
         }
-        digitalWrite(TEENSY_COL_PIN[i],HIGH); // restore column
+        digitalWrite(teensy_col_pin[i],HIGH);// restore column
     }
     return g;
 }
 
-void print_grid(Grid g)
-{
-    // for debugging
-    for (int i=0// ;
-         i<COLS;++i) {
-        for (int j=0;j<ROWS;++j) {
-            if (g.keys[i][j]) { Serial.print(default_layer[i][j]); }
+// for debugging
+void print_grid(Grid g){
+    for(int i=0;i<COLS;++i){
+        for(int j=0;j<ROWS;++j){
+            // FIXME if(g.keys[i][j]){Serial.print(default_layer[i][j]);}
         }
     }
     Serial.println("");
 }
 
-void setup() {
+
+/* Program */
+void setup(){
     set_pins();
 }
-void loop() {
-    print_grid(scan()); // read inputs
 
+void loop(){
+    print_grid(scan());// read inputs
     if(t>=MS_OUT){
         t-=MS_OUT;
         // TODO: output if changed
