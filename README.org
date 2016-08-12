@@ -12,7 +12,7 @@ Exactly one of these is active at any given time.
 
 ** Default
 
-| U+0071 | w | e | r | t |   | y | u | i | o | p |
+| \U+0071 | w | e | r | t |   | y | u | i | o | p |
 | a | s | d | f | g |   | h | j | k | l | ' |
 | z | x | c | v | b |   | n | m | , | . | - |
 
