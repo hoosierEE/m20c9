@@ -7,8 +7,8 @@ Modifiers inherit from the =Default= layer, overriding individual keys as needed
 |---------------------+---------+---------+---------+--------+---------+---------|
 | Layer Used:         | Default | Shifted | Numeric | Symbol | Default | Default |
 
-* Mechanical Key Layers
-Exactly one of these is active at any given time.
+* Mechanical Key Modes
+Exactly one of these modes is active at any given time.
 
 ** Default 
 
@@ -35,10 +35,27 @@ Exactly one of these is active at any given time.
 | SPC | - | + | = | ( |   | ) | ; | : | / | \     |
 | _   | ~ | ` | ! | { |   | } | < | , | . | >     |
  
-* Thumb Keys
+* Capacitive Keys (Modifiers)
 These include all the modifiers (Shift, L*) as well as space, tab, enter, and backspace.  Note that since no keymap is specified for =Layer 3= and =Layer 4=, they use the =Default= layer.
 
-| Shift_L | Tab     | Backspace |   | Space   | Enter   | Shift_R |
-| Ctrl_L  | Meta    | Alt       |   | AltGr   | Esc     | Ctrl_R  |
-|         | Layer 4 | Layer 3   |   | Numeric | Symbol  |         |
+| Tab     | Backspace |   | Space   | Enter  |
+| Meta    | Alt       |   |         | Esc    |
+| Layer 4 | Layer 3   |   | Numeric | Symbol |
+
+Alt Ctrl Meta Shift Space Backspace Enter Escape Symbol Numeric
+
+There are only 9 capacitive switches on the Teensy 3.x, so they must be used wisely.  Capacitve buttons are easier to hold down for long periods of time so they're good candidates for modifiers and keys that are pressed very frequently.  I opted to give =Space= its own dedicated capacitive key for aesthetic reasons (it's quieter).
+
+*** capacitve key priority
+1. (mode selector) shift
+2. Space
+3. Backspace
+4. Control
+5. Enter
+6. Meta
+7. Tab
+8. Escape
+9. Alt
+10. (mode selector) symbol
+11. (mode selector) numeric
 
