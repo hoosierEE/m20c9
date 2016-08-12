@@ -1,23 +1,43 @@
-about =: 0 : 0
-This script is intended to run as a post-commit hook, and updates the source code to match the documentation.
-Think of it as comment-driven development.
+#!/usr/bin/jc
+
+Note 'about this file'
+The noun definitions below (default, numeric, shifted, symbols) are turned into:
+1. C++ source code definitions
+2. README.org tables for user-facing documentation
+
+Usage.
+Run the script from the command line:
+  ./generate_layouts.ijs
+
+The script will complain if you don't already have J installed.
 )
 
-NB. get headings and data from org-table formatted string
-require'regex'
-t0=:'\*{2} .*\n(\n.*){3}'rxall fread '../README.org'
-
-get_data=:3 :0
-yy=.cutLF y
-h=.3}.,>0{yy
-d=.'|'cut&>}.yy
-h;<d
+default=:noun define
+qwertyuiop
+asdfghjkl'
+zxcvbnm,._
 )
 
-t1=:get_data &> t0
-
-to_c_array=:3 :0
-name=.tolower 0{y
-data=.('|';'\vert')rplc~ each 1{y
+numeric=:noun define
+7531902468
+1234567890
+%/:-()+,.*
 )
 
+shifted=:noun define
+QWERTYUIOP
+ASDFGHJKL"
+ZXCVBNM?!-
+)
+
+symbols=:noun define
+@#$%[]^&*|
+ -+=();:/\
+_~`!{}<,.>
+)
+
+thumbs=:noun define
+Shift_L Tab Backspace Space Enter Shift_R
+Ctrl_L Meta Alt Alt+Gr Esc Ctrl_R
+Layer4 Layer3 Numeric Symbol
+)
