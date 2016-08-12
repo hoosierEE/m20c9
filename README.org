@@ -10,9 +10,9 @@ Modifiers inherit from the =Default= layer, overriding individual keys as needed
 * Mechanical Key Layers
 Exactly one of these is active at any given time.
 
-** Default 
+** Default
 
-| q | w | e | r | t |   | y | u | i | o | p |
+| U+0071 | w | e | r | t |   | y | u | i | o | p |
 | a | s | d | f | g |   | h | j | k | l | ' |
 | z | x | c | v | b |   | n | m | , | . | - |
 
@@ -23,7 +23,6 @@ Exactly one of these is active at any given time.
 | Z | X | C | V | B |   | N | M | ? | ! | : |
 
 ** Numeric
-/Might replace top or middle row with navigation arrows.../
 
 | 7 | 5 | 3 | 1 | 9 |   | 0 | 2 | 4 | 6 | 8 |
 | 1 | 2 | 3 | 4 | 5 |   | 6 | 7 | 8 | 9 | 0 |

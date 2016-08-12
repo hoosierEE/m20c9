@@ -1,5 +1,5 @@
-/* m30c10 keyboard firmware for TeensyLC
-   https://github.com/hoosierEE/m30c10
+/* m30c9 -- keyboard firmware for Teensy 3.0
+   https://github.com/hoosierEE/m30c9
 */
 #include <Arduino.h>
 #include <array>
@@ -10,20 +10,22 @@ elapsedMillis t;
 
 
 /* Pins */
-static const int COLS{6},ROWS{5},CAPS{9};
-const std::array<int,CAPS>teensy_cap_pin{{0,1,15,16,17,18,19,22,23}};
-const std::array<int,COLS>teensy_row_pin{{10,11,12,14,20,21}};
-const std::array<int,ROWS>teensy_col_pin{{2,5,6,7,8}};
+static const int COLS{6};
+static const int ROWS{5};
+static const int CAPS{9};
+const std::array<int,CAPS> teensy_cap_pin{{0,1,15,16,17,18,19,22,23}};
+const std::array<int,COLS> teensy_row_pin{{10,11,12,14,20,21}};
+const std::array<int,ROWS> teensy_col_pin{{2,5,6,7,8}};
 
 
 /* Model */
-struct Grid{bool keys[COLS][ROWS];}grid;
+struct Grid{bool keys[COLS][ROWS];} grid;
 const std::array<char,3>greet{"hi"};
-const std::array<std::array<char,3>,2>greets{{"hi","yo"}};
-const std::array<std::array<char,6>,6> default_layer[]{{"qwert","yuiop","asdfg","hjkl'","zxcvb","nm,.-"}},
-    shifted_layer[]{{"QWERT","YUIOP","ASDFG","HJKL\"","ZXCVB","NM?!:"}},
-    numeric_layer[]{{"75319","02468","12345","67890","%/:-(",")+,.*"}},
-    symbols_layer[]{{"@#$%[","]^&*|"," -+=(",");:/\\","_~`!{","}<,.>"}};
+const std::array<std::array<char,3>,2> greetings{{"hi","yo"}};
+const std::array<std::array<char,6>,6> default_layer{{"qwert","yuiop","asdfg","hjkl'","zxcvb","nm,.-"}};
+const std::array<std::array<char,6>,6> shifted_layer{{"QWERT","YUIOP","ASDFG","HJKL\"","ZXCVB","NM?!:"}};
+const std::array<std::array<char,6>,6> numeric_layer{{"75319","02468","12345","67890","%/:-(",")+,.*"}};
+const std::array<std::array<char,6>,6> symbols_layer{{"@#$%[","]^&*|"," -+=(",");:/\\","_~`!{","}<,.>"}};
 
 
 /* Functions */
