@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+gcc -std=c++14 -Werror -Wall main.cpp && ./a.out && rm a.out
