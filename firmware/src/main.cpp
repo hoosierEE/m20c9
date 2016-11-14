@@ -1,92 +1,66 @@
 /* m30c9 -- keyboard firmware for Teensy 3.0
-   https://github.com/hoosierEE/m30c9
-*/
+   https://github.com/hoosierEE/m30c9 */
 #include <Arduino.h>
 #include <array>
 
-// Output data rate limit: 10ms
-const uint32_t MS_OUT{10};
+/* HID keyboard data rate limited to 1ms. */
+const uint32_t rate{10};/* 10ms */
 elapsedMillis t;
 
-/* Pins */
-static const uint8_t COLS{5};
-static const uint8_t ROWS{6};
-static const uint8_t CAPS{9};
-const int teensy_cap_pin[CAPS]{0,1,15,16,17,18,19,22,23};
-const int teensy_row_pin[ROWS]{10,11,12,14,20,21};
-const int teensy_col_pin[COLS]{2,5,6,7,8};
+using std::array;
+const uint8_t cols{5},rows{4},caps{9};
+const array<uint8_t,caps>tnsy_cap_pins{0,1,15,16,17,18,19,22,23};
+const array<uint8_t,cols>tnsy_col_pins{2,5,6,7,8};
+const array<uint8_t,rows>tnsy_row_pins{10,11,12,14};
+typedef const array<array<uint8_t,cols>,rows> MechLayer;
+
+/* Capacitive Keys */
 
 
-/* Model */
-struct Grid{bool keys[COLS][ROWS];} grid;
-class Layer{
-public:
-    Layer(const char *str){
-        int k=0;
-        for(int i=0;i<COLS;++i){
-            for(int j=0;j<ROWS;++j){
-                grid[i][j]=str[k];
-                k++;
-            }
-        }
-    }
-    char grid[COLS][ROWS];
-};
+/* Left Hand */
+MechLayer Ldefault{{
+        {'1', '2', '3', '4', '5'},
+        {'q', 'w', 'e', 'r', 't'},
+        {'a', 's', 'd', 'f', 'g'},
+        {'z', 'x', 'c', 'v', 'b'}}};
 
-Layer defl("qwertyuiopasdfghjkl'zxcvbnm,.-");
+MechLayer Lshifted{{
+        {'!', '@', '#', '$', '%'},
+        {'Q', 'W', 'E', 'R', 'T'},
+        {'A', 'S', 'D', 'F', 'G'},
+        {'Z', 'X', 'C', 'V', 'B'}}};
 
-const std::array<char,3>greet{"hi"};
-const std::array<std::array<char,3>,2> greetings{{"hi","yo"}};
-const std::array<std::array<char,6>,6> default_layer{{"qwert","yuiop","asdfg","hjkl'","zxcvb","nm,.-"}};
-const std::array<std::array<char,6>,6> shifted_layer{{"QWERT","YUIOP","ASDFG","HJKL\"","ZXCVB","NM?!:"}};
-const std::array<std::array<char,6>,6> numeric_layer{{"75319","02468","12345","67890","%/:-(",")+,.*"}};
-const std::array<std::array<char,6>,6> symbols_layer{{"@#$%[","]^&*|"," -+=(",");:/\\","_~`!{","}<,.>"}};
+MechLayer Lsymbols{{
+        {' ', ' ', ' ', ' ', ' '},
+        {'@', '#', '$', '%', '['},
+        {' ', '-', '+', '=', '('},
+        {'_', '~', '`', '!', '{'}}};
 
+/* Right Hand */
+MechLayer Rdefault{{
+        {'6', '7', '8', '9', '0'},
+        {'y', 'u', 'i', 'o', 'p'},
+        {'h', 'j', 'k', 'l', '\''},
+        {'n', 'm', ',', '.', '-'}}};
 
-/* Functions */
-void set_pins(void){
-  for(auto &i:teensy_col_pin){
-    //for(int i=0;i<COLS;++i){
-        pinMode(teensy_col_pin[i],OUTPUT);
-        for(auto &j:teensy_row_pin){
-        //for(int j=0;j<ROWS;++j){
-            pinMode(teensy_row_pin[j], INPUT_PULLUP);
-        }
-    }
-}
+MechLayer Rshifted{{
+        {'^', '&', '*', '(', ')'},
+        {'Y', 'U', 'I', 'O', 'P'},
+        {'H', 'J', 'K', 'L', '"'},
+        {'N', 'M', '?', '!', ':'}}};
 
-Grid scan(void){
-    Grid g;
-    for(int i=0;i<COLS;++i){
-        digitalWrite(teensy_col_pin[i],LOW);// pull column low
-        for(int j=0;j<ROWS;++j){
-            g.keys[i][j]=digitalRead(teensy_row_pin[i]);// populate grid
-        }
-        digitalWrite(teensy_col_pin[i],HIGH);// restore column
-    }
-    return g;
-}
+MechLayer Rsymbols{{
+        {' ', ' ', ' ', ' ', ' '},
+        {']', '^', '&', '*', '|'},
+        {')', ';', ':', '/', '\\'},
+        {'}', '<', ',', '.', '>'}}};
 
-// for debugging
-void print_grid(Grid g){
-    for(int i=0;i<COLS;++i){
-        for(int j=0;j<ROWS;++j){
-            // FIXME if(g.keys[i][j]){Serial.print(default_layer[i][j]);}
-        }
-    }
-    Serial.println("");
-}
-
-
-/* Program */
+/* Both: scan own switches, send/receive messages from other half.
+   1 half: commuincate with host over BTLE.
+   1 half: resolve 2-handed key combos e.g: (left-shift-plus-k == K)
+*/
 void setup(){
-    set_pins();
 }
 
 void loop(){
-    print_grid(scan());// read inputs
-    if(t>=MS_OUT){
-        t-=MS_OUT;
-        // TODO: output if changed
-    }
 }

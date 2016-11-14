@@ -1,71 +1,53 @@
 #include <inttypes.h>
 #include <cstdio>
 #include <array>
-
 using std::array;
 const uint8_t cols{5},rows{4},caps{9};
-
-/* Physical Pins */
 const array<uint8_t,caps>tnsy_cap_pins{0,1,15,16,17,18,19,22,23};
 const array<uint8_t,cols>tnsy_col_pins{2,5,6,7,8};
 const array<uint8_t,rows>tnsy_row_pins{10,11,12,14};
-
-/* Printable Character Keymap */
-typedef const array<array<uint8_t,cols>,rows> Layer;
+typedef const array<array<uint8_t,cols>,rows> MechLayer;
 
 /* Left Hand */
-Layer Ldefault{{
+MechLayer Ldefault{{
         {'1', '2', '3', '4', '5'},
         {'q', 'w', 'e', 'r', 't'},
         {'a', 's', 'd', 'f', 'g'},
-        {'z', 'x', 'c', 'v', 'b'}}
-};
+        {'z', 'x', 'c', 'v', 'b'}}};
 
-Layer Lshifted{{
+MechLayer Lshifted{{
         {'!', '@', '#', '$', '%'},
         {'Q', 'W', 'E', 'R', 'T'},
         {'A', 'S', 'D', 'F', 'G'},
-        {'Z', 'X', 'C', 'V', 'B'}}
-};
+        {'Z', 'X', 'C', 'V', 'B'}}};
 
-Layer Lsymbols{{
-        {'@', '#', '$', '%', '['},
+MechLayer Lsymbols{{
+        {' ', ' ', ' ', ' ', ' '},
         {'@', '#', '$', '%', '['},
         {' ', '-', '+', '=', '('},
-        {'_', '~', '`', '!', '{'}}
-};
+        {'_', '~', '`', '!', '{'}}};
 
 /* Right Hand */
-Layer Rdefault{{
+MechLayer Rdefault{{
         {'6', '7', '8', '9', '0'},
         {'y', 'u', 'i', 'o', 'p'},
         {'h', 'j', 'k', 'l', '\''},
-        {'n', 'm', ',', '.', '-'}}
-};
+        {'n', 'm', ',', '.', '-'}}};
 
-Layer Rshifted{{
+MechLayer Rshifted{{
         {'^', '&', '*', '(', ')'},
         {'Y', 'U', 'I', 'O', 'P'},
         {'H', 'J', 'K', 'L', '"'},
-        {'N', 'M', '?', '!', ':'}}
-};
+        {'N', 'M', '?', '!', ':'}}};
 
-Layer Rsymbols{{
-        {']', '^', '&', '*', '|'},
+MechLayer Rsymbols{{
+        {' ', ' ', ' ', ' ', ' '},
         {']', '^', '&', '*', '|'},
         {')', ';', ':', '/', '\\'},
-        {'}', '<', ',', '.', '>'}}
-};
+        {'}', '<', ',', '.', '>'}}};
 
-/* Each half scans its set of switches; gets status from its counterpart.
-   1 half commuincates with host over BTLE.
-
-   Assuming that BTLE+[other wireless] costs more energy than just
-   [other wireless] by itself, we can attempt to equalize energy
-   usage by making the non-BTLE side do extra work, such as:
-
-   "should left-shift-plus-k send K?"
+/* Both: scan own switches, send/receive messages from other half.
+   1 half: commuincate with host over BTLE.
+   1 half: resolve 2-handed key combos e.g: (left-shift-plus-k == K)
 */
-int main(){
-
-}
+int main(){}
