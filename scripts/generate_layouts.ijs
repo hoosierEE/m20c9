@@ -1,31 +1,4 @@
 #!/usr/local/bin/jc
-NB. make sure no other J nouns exist
-erase each nl 0
-
-default=:0 :0
- q w e r t y u i o p
- a s d f g h j k l '
- z x c v b n m , . -
-)
-
-numeric=:0 :0
- 7 5 3 1 9 0 2 4 6 8
- 1 2 3 4 5 6 7 8 9 0
- % / : - ( ) + , . *
-)
-
-shifted=:0 :0
- Q W E R T Y U I O P
- A S D F G H J K L "
- Z X C V B N M ? ! _
-)
-
-symbols=:0 :0
- @ # $ % [ ] ^ & * |
-   - + = ( ) ; : / \
- _ ~ ` ! { } < , . >
-)
-
 Note 'about'
 The noun definitions below (default, numeric, shifted, symbols) are turned into:
 1. C++ source code definitions
@@ -36,6 +9,30 @@ Note 'usage'
 1. Install J and put it on your path (i.e. /usr/local/bin/jc)
 2. Run this script from the command line:
   ./generate_layouts.ijs
+)
+
+NB. [dev] make sure no other J nouns exist
+erase each nl 0
+
+default=:0 :0
+ 1 2 3 4 5 6 7 8 9 0
+ q w e r t y u i o p
+ a s d f g h j k l '
+ z x c v b n m , . -
+)
+
+shifted=:0 :0
+ ! @ # $ % ^ & * ( )
+ Q W E R T Y U I O P
+ A S D F G H J K L "
+ Z X C V B N M ? ! _
+)
+
+symbols=:0 :0
+ % / : - ( ) + , . *
+ @ # $ % [ ] ^ & * |
+ _ - + = ( ) ; : / \
+ _ ~ ` ! { } < , . >
 )
 
 names=:nl 0  NB. names of the above symbol tables
