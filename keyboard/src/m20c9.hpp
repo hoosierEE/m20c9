@@ -1,4 +1,4 @@
-// m20c9 -- data types and functions to read keyswitch matrix
+// data types and functions to read keyswitch matrix
 #pragma once
 #include <array>
 const uint8_t cols{5},rows{4},caps{9};
@@ -54,6 +54,6 @@ void read_caps_raw(CapsRaw&cr){
 }
 
 void read_caps(CapsTouched&ct, const CapsRaw&cr){
-    // TODO less-arbitrary threshold
+    // TODO determine if a more sophisticated threshold is needed
     for(const auto&touch_pin:ct) ct[touch_pin]=cr[touch_pin]>1000;
 }
