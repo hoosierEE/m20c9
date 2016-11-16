@@ -1,14 +1,21 @@
 * Split Wireless Keyboard
+
   Minimal keyboard with 30 mechanical keyswitches (Cherry MX Clear), plus a cluster of capacitive buttons for use by both thumbs.
   Left and right halves are completely separate from each other, and can be used independently.
   The halves communicate with each other through wireless UART, and commuincate with the host OS as a Bluetooth HID keyboard.
 
-* Capacitive Keys
-  These include all the modifiers (Shift, L*) as well as space, tab, enter, and backspace.
+  Some helpful links:
+  - [[http://blog.komar.be/how-to-make-a-keyboard-the-matrix/][NKRO and diodes]]
+  - [[http://www.pjrc.com/teensy/td_keyboard.html][Teensy keyboard #defines]]
 
-  | Tab     | Backspace |   | Space   | Enter  |
-  | Meta    | Alt       |   |         | Esc    |
-  | Layer 4 | Layer 3   |   | Numeric | Symbol |
+* Capacitive Keys
+  These include all the modifiers (Alt, Ctrl, Meta, Shift) as well as space, tab, enter, and backspace.
+
+  | Alt   |   |   |           | Enter     |
+  | Ctrl  |   |   | Delete    | Backspace |
+  | Meta  |   |   | Backspace | Space     |
+  | Shift |   |   | Shift     | Tab       |
+
 
 * Mechanical Key Modes
   Exactly one of these modes is active at any given time.

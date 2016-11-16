@@ -5,15 +5,7 @@ The noun definitions below (default, numeric, shifted, symbols) are turned into:
 2. README.org tables for user-facing documentation
 )
 
-Note 'usage'
-1. Install J and put it on your path (i.e. /usr/local/bin/jc)
-2. Run this script from the command line:
-  ./generate_layouts.ijs
-)
-
-NB. [dev] make sure no other J nouns exist
 erase each nl 0
-
 default=:0 :0
  1 2 3 4 5 6 7 8 9 0
  q w e r t y u i o p
@@ -29,13 +21,13 @@ shifted=:0 :0
 )
 
 symbols=:0 :0
- % / : - ( ) + , . *
  @ # $ % [ ] ^ & * |
  _ - + = ( ) ; : / \
  _ ~ ` ! { } < , . >
 )
 
 names=:nl 0  NB. names of the above symbol tables
+
 extract=:(_2<@}.\]);._2@".@]  NB. get the data from the named symbol table
 results=:(extract;])&>names
 
