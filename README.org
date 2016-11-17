@@ -1,9 +1,5 @@
 * Split Wireless Keyboard
 
-  Minimal keyboard with 30 mechanical keyswitches (Cherry MX Clear), plus a cluster of capacitive buttons for use by both thumbs.
-  Left and right halves are completely separate from each other, and can be used independently.
-  The halves communicate with each other through wireless UART, and commuincate with the host OS as a Bluetooth HID keyboard.
-
   Some helpful links:
   - [[http://blog.komar.be/how-to-make-a-keyboard-the-matrix/][NKRO and diodes]]
   - [[http://www.pjrc.com/teensy/td_keyboard.html][Teensy keyboard #defines]]

@@ -1,2 +1,8 @@
 #!/usr/bin/env bash
+# Example showing how to invoke PlatformIO to build the 2 different firmwares.
+
+# build the left side firmware
 pio run -e left
+
+# build and upload left side firmware -- assumes you have just the left side plugged into a USB port
+# pio run -e left -t upload
