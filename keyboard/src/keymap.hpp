@@ -1,41 +1,42 @@
 // Left side mechanical keymap
+#include "m20c9.hpp"
+
 #ifdef m20c9_LEFT
-MechLayer MLdefault{{
+MechLayer dflt{{
         {'1', '2', '3', '4', '5'},
         {'q', 'w', 'e', 'r', 't'},
         {'a', 's', 'd', 'f', 'g'},
         {'z', 'x', 'c', 'v', 'b'}}};
 
-MechLayer MLshifted{{
+MechLayer shft{{
         {'!', '@', '#', '$', '%'},
         {'Q', 'W', 'E', 'R', 'T'},
         {'A', 'S', 'D', 'F', 'G'},
         {'Z', 'X', 'C', 'V', 'B'}}};
 
-MechLayer MLsymbols{{
+MechLayer syms{{
         {' ', ' ', ' ', ' ', ' '},
         {'@', '#', '$', '%', '['},
         {' ', '-', '+', '=', '('},
         {'_', '~', '`', '!', '{'}}};
-
 // TODO: Left side capacitive keymap
 
 #else
 
 // Right side mechanical keymap
-MechLayer MLdefault{{
+MechLayer dflt{{
         {'6', '7', '8', '9', '0'},
         {'y', 'u', 'i', 'o', 'p'},
         {'h', 'j', 'k', 'l', '\''},
         {'n', 'm', ',', '.', '-'}}};
 
-MechLayer MLshifted{{
+MechLayer shft{{
         {'^', '&', '*', '(', ')'},
         {'Y', 'U', 'I', 'O', 'P'},
         {'H', 'J', 'K', 'L', '"'},
         {'N', 'M', '?', '!', ':'}}};
 
-MechLayer MLsymbols{{
+MechLayer syms{{
         {' ', ' ', ' ', ' ', ' '},
         {']', '^', '&', '*', '|'},
         {')', ';', ':', '/', '\\'},

@@ -13,5 +13,5 @@ void setup(){
 void loop(){
     read_mech(mp);
     read_caps_raw(cr);
-    read_caps(ct,cr);
+    read_caps(cr,ct);
 }
