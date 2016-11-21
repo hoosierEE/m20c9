@@ -15,6 +15,8 @@
 // ...or left blank to build the right side (default).
 #ifdef m20c9_LEFT
 #include "keymap_left.hpp"
+#define is_right 0
 #else
 #include "keymap_right.hpp"
+#define is_right 1
 #endif
