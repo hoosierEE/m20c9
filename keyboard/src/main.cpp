@@ -1,7 +1,8 @@
 #include <Arduino.h>
-#include "readers.hpp"
+#include "common.hpp"
 #include "keymap.hpp"
 
+// Global data
 CapsRaw cr;
 CapsTouched ct;
 MechsPressed mp;
